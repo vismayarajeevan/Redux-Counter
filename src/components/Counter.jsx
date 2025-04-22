@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../redux/counterSlice'
+import { decrement } from '../redux/counterSlice'
 
 
 const Counter = () => {
@@ -13,7 +14,7 @@ const dispatch = useDispatch()
     <h1 style={{fontSize:"100px"}}>{count}</h1>
     
      <div style={{width:'700px'}} className='d-flex justify-content-between my-5'>
-       <button className='btn btn-warning'  >Decrement</button>
+       <button className='btn btn-warning' onClick={()=>dispatch(decrement())} >Decrement</button>
        <button className='btn btn-danger'  >Reset</button>
        <button className='btn btn-success' onClick={()=>dispatch(increment())} >Increment</button>
        </div>
